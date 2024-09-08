@@ -1,0 +1,64 @@
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.main::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
+body {
+  margin: 0;
+}
+
+.welcomediv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+  p, h1 {
+    margin: 0;
+  }
+  p {
+    font-size: 1.35rem;
+  }
+}
+
+.welcome-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  font-size: 3.5rem;
+}
+
+@media only screen and (max-width: 750px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
+.flowerpic {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('https://cdn.discordapp.com/attachments/1098739160631750716/1274823834226262016/dizzylol_summer_field_filled_with_grass_and_alot_of_flowers_sun_25e0148c-dc7a-44e1-9a70-44227aff4d33.png?ex=66c3a7b7&is=66c25637&hm=02e6f60b2825b3fa4f9b4e0f960f90f5513cf754cd25e83096e788ada265a11e&');
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  opacity: 0.2;
+}

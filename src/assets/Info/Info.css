@@ -1,0 +1,61 @@
+.info-main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+
+    h1 {
+        font-size: 3rem;
+        text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+.flowerpic {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+  }
+
+.kyrkbild {
+    width: 500px;
+    height: auto;
+    border-radius: 8px;
+    opacity: 1 !important;
+    opacity: 300000 !important;
+}
+
+.mainwrapp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.itemwrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+@media only screen and (max-width: 750px) {
+    .kyrkbild {
+        width: 385px;
+    }
+    .info-img-wrap {
+        padding: 0 15px;
+    }
+}

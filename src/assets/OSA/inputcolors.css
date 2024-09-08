@@ -1,0 +1,5 @@
+.textInput {
+  &::label {
+    color: white;
+  }
+}

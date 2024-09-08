@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Parisienne&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.osa-main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.flowerpic {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../bg.png');
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  opacity: 0.2;
+}
+
+.content {
+  opacity: 1;
+  z-index: 300;
+  width: 25%;
+}
+
+h1 {
+  color: white;
+  font-size: 2rem;
+  font-family: "Parisienne", cursive;
+}
+
+@media only screen and (max-width: 750px) {
+  .content {
+    width: 85vw;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+#mantine-fhsoye4u4-label, #mantine-4420gw8qt-label {
+  color: white;
+}
+
+.m_6c018570[data-variant='default'] {
+  background-color: white;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: none;
+}
+
+input, textarea {
+  border: none;
+  background-color : #d1d1d1; 
+  padding: 5px 10px;
+  color: black;
+  width: 100%;
+  border-radius: 8px;
+}
+
+label {
+  color: rgb(51, 51, 51);
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+input:focus{
+  outline: none;
+}
+.error-div {
+  width: 25%;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  border:1px solid #eee;
+  border-left-width:5px;
+  border-radius: 3px;
+  margin:10px auto;
+  font-size: 16px;
+  color: rgb(49, 49, 49);
+  background-color: rgba(217, 83, 79, 0.1);
+  border-left-color: #d9534f;
+  position: absolute;
+}
+
+@media only screen and (max-width: 750px) {
+  .error-div {
+    width: 80%;
+  }
+}
