@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Home.css';
 import { MantineProvider, Transition } from '@mantine/core';
 import Header from '../Header/Header';
+import '@mantine/core/styles.css';
 
 const Home = () => {
   const [rendered, setRendered] = useState(false);

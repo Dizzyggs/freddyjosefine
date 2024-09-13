@@ -50,6 +50,10 @@ h1 {
   background-color: white;
 }
 
+.answersent {
+  font-family: "Poppins", sans-serif;
+}
+
 .input-wrapper {
   display: flex;
   flex-direction: column;

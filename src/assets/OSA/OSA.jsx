@@ -1,16 +1,24 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import { MantineProvider, Button, Transition, Radio } from '@mantine/core';
-import '../Header/Header'
-import '@mantine/core/styles.css';
+import React, { useState, useEffect } from 'react';
+import { MantineProvider, Button, Transition, Radio, RadioGroup } from '@mantine/core';
+import emailjs from 'emailjs-com';
 import './OSA.css';
 import Header from '../Header/Header';
 
 const OSA = () => {
-  const [kost, setKost] = useState('')
-  const [names, setNames] = useState('')
-  const [invalid, setInvalid] = useState(false)
-  const [willCome, setWillCome] = useState(true)
+  const [kost, setKost] = useState('');
+  const [names, setNames] = useState('');
+  const [invalid, setInvalid] = useState(false);
+  const [willCome, setWillCome] = useState('yes'); // Will map to RadioGroup value
+  const [sentEmail, setSentEmail] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (sentEmail) {
+      setTimeout(() => {
+        setSentEmail(false);
+      }, 3000);
+    }
+  }, [sentEmail]);
 
   const cssVariablesResolver = (theme) => ({
     variables: {
@@ -26,63 +34,102 @@ const OSA = () => {
   });
 
   const handleSendAnswer = () => {
-    if(names == '') {
-      setInvalid(true)
+    if (names === '') {
+      setInvalid(true);
       return;
     }
-  }
+
+    setLoading(true); // Set loading to true while sending the email
+
+    const templateParams = {
+      to_name: 'Freddy & Josefine',
+      from_name: names,
+      message: `${willCome ? 'Vi kommer!' : 'Vi kommer tyvärr inte.'}`,
+      kost: kost == '' ? `Ingen specialkost.` : `Specialkost: ${kost}`
+    };
+
+    emailjs.send('service_d0fwyle', 'template_9cewfa5', templateParams, 'user_CsWVm2lpWvSgIf8U7QkIh')
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        setLoading(false); // Set loading to false after successful response
+        setSentEmail(true);
+      })
+      .catch((err) => {
+        console.log('FAILED...', err);
+        setLoading(false); // Set loading to false after error
+      });
+  };
 
   useEffect(() => {
-    if(invalid) {
+    if (invalid) {
       setTimeout(() => {
-        setInvalid(false)
+        setInvalid(false);
       }, 3000);
     }
-  }, [invalid])
-
+  }, [invalid]);
 
   return (
     <MantineProvider defaultColorScheme="dark" cssVariablesResolver={cssVariablesResolver} withCssVariables>
       <div className='osa-main'>
-        <Header/>
+        <Header />
         <div className="flowerpic" />
         <div className='content'>
-          <h1>Låt oss veta om du/ni kommer!</h1>
-          <div className='input-wrapper'>
-            <label> 
-              Namn
-              <input type="text" name="name" onChange={(e) => setNames(e.target.value)} value={names}/>
-            </label>
-            <label style={{marginTop: '.5rem'}}> 
-              Specialkost
-              <input type="text" name="kost" placeholder='T.ex: Vegetarian' onChange={(e) => setKost(e.target.value)} value={kost}/>
-            </label>
-            <Radio
-              label="Jag/vi kommer"
-              onChange={(event) => setWillCome(event.currentTarget.checked)}
-              checked={willCome}
-              style={{color: 'white', marginTop: '1rem'}}
-            />
-            <Radio
-              label="Jag/vi kommer inte"
-              onChange={(event) => setWillCome(false)}
-              checked={!willCome}
-              style={{color: 'white', marginTop: '.6rem'}}
-            />
-          </div>
-          <Button style={{marginTop: '1.5rem'}} onClick={handleSendAnswer}>Skicka Svar</Button>
-          <Transition
-            mounted={invalid}
-            transition="slide-down"
-            duration={400}
-            timingFunction="ease"
-          >
-            {(styles) => (
-              <div style={styles} className='error-div'>
-                Du måste fylla i namn!
+          {!sentEmail ? (
+            <>
+              <h1>Låt oss veta om du/ni kommer!</h1>
+
+              <div className='input-wrapper'>
+                <label>
+                  Namn
+                  <input
+                    type="text"
+                    name="from_name"
+                    onChange={(e) => setNames(e.target.value)}
+                    value={names}
+                    required
+                  />
+                </label>
+                <label style={{ marginTop: '.5rem' }}>
+                  Specialkost
+                  <input
+                    type="text"
+                    name="kost"
+                    placeholder='T.ex: Vegetarian'
+                    onChange={(e) => setKost(e.target.value)}
+                    value={kost}
+                  />
+                </label>
+
+                {/* Use RadioGroup for radio buttons */}
+                <RadioGroup
+                  value={willCome}
+                  onChange={setWillCome}
+                  style={{ marginTop: '1rem', color: 'white' }}
+                >
+                  <Radio value="yes" label="Jag/vi kommer" />
+                  <Radio value="no" label="Jag/vi kommer inte" />
+                </RadioGroup>
               </div>
-            )}
-          </Transition>
+              <Button style={{ marginTop: '1.5rem' }} onClick={handleSendAnswer} disabled={loading}>
+                {loading ? 'Skickar Svar...' : 'Skicka Svar'}
+              </Button>
+
+              <Transition
+                mounted={invalid}
+                transition="slide-down"
+                duration={400}
+                timingFunction="ease"
+              >
+                {(styles) => (
+                  <div style={styles} className='error-div'>
+                    Du måste fylla i namn!
+                  </div>
+                )}
+              </Transition>
+            </>
+          ) : (
+            <h1 className='answersent'>Tack för du skickade ditt/erat svar!</h1>
+          )}
         </div>
       </div>
     </MantineProvider>
