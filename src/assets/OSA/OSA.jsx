@@ -110,8 +110,8 @@ const OSA = () => {
                   <Radio value="no" label="Jag/vi kommer inte" />
                 </RadioGroup>
               </div>
-              <Button style={{ marginTop: '1.5rem' }} onClick={handleSendAnswer} disabled={loading}>
-                {loading ? 'Skickar Svar...' : 'Skicka Svar'}
+              <Button style={{ marginTop: '1.5rem' }} onClick={handleSendAnswer} loading={loading}>
+                Skicka Svar
               </Button>
 
               <Transition
