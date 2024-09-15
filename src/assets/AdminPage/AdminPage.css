@@ -90,4 +90,7 @@
   .answer-header {
     padding: 0 10px;
   }
+  .answer-header {
+    width: 100vw;
+  }
 }

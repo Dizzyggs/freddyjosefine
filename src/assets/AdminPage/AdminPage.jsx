@@ -56,7 +56,6 @@ const AdminPage = () => {
           <>
           <Loader size={'md'} /> 
           <p>Laddar data...</p>
-          <p>{import.meta.env.VITE_admin_pw}</p>
           </>
         ) : (
           <>
@@ -87,7 +86,9 @@ const AdminPage = () => {
               </div>
               {isNotComing?.length > 0 && (
                 <div className='isComing-div'>
+                  <div className='answer-header'>
                   <h2>❌ Kommer Inte</h2>
+              </div>
                   {isNotComing.map((guest, index) => (
                     <div className='guest-div' key={index}>
                       <div className='guest-name'>
