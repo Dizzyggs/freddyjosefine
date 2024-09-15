@@ -3,6 +3,7 @@ import './Home.css';
 import { MantineProvider, Transition } from '@mantine/core';
 import Header from '../Header/Header';
 import '@mantine/core/styles.css';
+import { cssVariablesResolver } from '../utils/utils';
 
 const Home = () => {
   const [rendered, setRendered] = useState(false);
@@ -16,15 +17,6 @@ const Home = () => {
 
     return () => clearTimeout(timer); // Cleanup timeout
   }, []);
-
-  const cssVariablesResolver = (theme) => ({
-    light: {
-      '--mantine-color-body': 'transparent',
-    },
-    dark: {
-      '--mantine-color-body': 'transparent',
-    },
-  });
 
   return (
     <MantineProvider cssVariablesResolver={cssVariablesResolver}>

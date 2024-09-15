@@ -3,6 +3,8 @@ import { MantineProvider, Button, Transition, Radio, RadioGroup } from '@mantine
 import emailjs from 'emailjs-com';
 import './OSA.css';
 import Header from '../Header/Header';
+import { addOsa } from '../FirebaseApp/FirebaseApp';
+import { cssVariablesResolver } from '../utils/utils';
 
 const OSA = () => {
   const [kost, setKost] = useState('');
@@ -20,19 +22,6 @@ const OSA = () => {
     }
   }, [sentEmail]);
 
-  const cssVariablesResolver = (theme) => ({
-    variables: {
-      '--mantine-color-body': 'transparent',
-    },
-    light: {
-      '--mantine-color-body': 'transparent',
-    },
-    dark: {
-      '--mantine-color-body': 'transparent',
-      '--mantine-color-scheme': 'light',
-    },
-  });
-
   const handleSendAnswer = () => {
     if (names === '') {
       setInvalid(true);
@@ -40,19 +29,23 @@ const OSA = () => {
     }
 
     setLoading(true); // Set loading to true while sending the email
-
+    const kosten = kost == '' ? `Ingen specialkost.` : `Specialkost: ${kost}`
+    const kostenAdmin = kost == '' ? `` : `${kost}`
     const templateParams = {
       to_name: 'Freddy & Josefine',
       from_name: names,
-      message: `${willCome ? 'Vi kommer!' : 'Vi kommer tyvärr inte.'}`,
-      kost: kost == '' ? `Ingen specialkost.` : `Specialkost: ${kost}`
+      message: kost,
+      kost: kosten == '' ? `Ingen specialkost.` : `Specialkost: ${kost}`
     };
 
     emailjs.send('service_d0fwyle', 'template_9cewfa5', templateParams, 'user_CsWVm2lpWvSgIf8U7QkIh')
       .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
+        const isComing = willCome == 'no' ? false : true
         setLoading(false); // Set loading to false after successful response
         setSentEmail(true);
+        addOsa(names, isComing, kostenAdmin)
+        setWillCome(true);
+        setNames('')
       })
       .catch((err) => {
         console.log('FAILED...', err);
