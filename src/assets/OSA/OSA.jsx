@@ -87,7 +87,7 @@ const OSA = () => {
                   <input
                     type="text"
                     name="kost"
-                    placeholder='T.ex: Vegetarian'
+                    placeholder='T.ex: 1 Vegetarian'
                     onChange={(e) => setKost(e.target.value)}
                     value={kost}
                   />
