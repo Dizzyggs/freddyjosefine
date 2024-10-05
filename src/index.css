@@ -17,3 +17,9 @@
   margin: 0;
 }
 
+.normal-font {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 400;
+  color: #333333;
+}
+

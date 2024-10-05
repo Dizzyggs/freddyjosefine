@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css'
-import { Transition } from '@mantine/core';
+import { Transition, Modal } from '@mantine/core';
 import { Link } from 'react-router-dom';
+import { IconPhone } from '@tabler/icons-react';
+import useMobileDetect from '../hooks/useMobileDetect';
 
 const Header = () => {
   const [rendered, setRendered] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false)
+  const isMobile = useMobileDetect();
+
   useEffect(() => {
     setRendered(true)
   }, [])
@@ -17,19 +22,49 @@ const Header = () => {
       timingFunction="ease"
     >
       {(styles) => (
-        <div className='header-main' style={styles}>
-          <Link to='/'>
-            <p>HEM</p>
-          </Link>
-          <Link to='/info'>
-            <p>INFORMATION</p>
-          </Link>
-          <Link to='/osa'>
-            <p>OSA</p>
-          </Link>
-          <Link to='/kontakt'>
-            <p>KONTAKT</p>
-          </Link>
+        <div className='wrapper'>
+           <Modal opened={modalOpen} onClose={() => setModalOpen(false)} title="" size={isMobile? '90vw' : '40vw'} centered transitionProps={{ transition: 'fade-down', duration: 350 }}>
+              <div className='modalmain'>
+                <div className="flowerpic2" />
+                <h1 className='normal-font' style={{ marginTop: isMobile ? '-5rem' : '0' }}>Kontakt</h1>
+                <div className='people-kontakt'>
+                  <div className='person'>
+                    <h2 style={{textDecoration: 'underline', margin: '0'}}>Josefine</h2>
+                    <span style={{display: 'flex', flexDirection: 'row', fontSize: '.5rem', alignItems: 'center'}}>
+                      <IconPhone style={{color: 'black'}} href="tel:073-4332234"/>
+                      <p href="tel:073-4332234">073-4332234</p>
+                    </span>
+                  </div>
+                  <div className='person'>
+                    <h2 style={{textDecoration: 'underline', margin: '0'}}>Freddy</h2>
+                    <span style={{display: 'flex', flexDirection: 'row', fontSize: '.5rem', alignItems: 'center'}}>
+                      <IconPhone style={{color: 'black'}} href="tel:073-3698223"/>
+                      <p href="tel:073-3698223">073-3698223</p>
+                    </span>
+                  </div>
+                </div>
+                <h2 style={{textDecoration: 'underline', margin: '0', marginTop: '2rem'}}>Manheims Säteri</h2>
+                <p>011-34 00 98</p>
+              </div>
+           </Modal>
+           {!modalOpen &&
+                      <div className='header-main' style={styles}>
+                      <Link to='/'>
+                        <p>HEM</p>
+                      </Link>
+                      <Link to='/info'>
+                        <p>INFORMATION</p>
+                      </Link>
+                      <Link to='/osa'>
+                        <p>OSA</p>
+                      </Link>
+                      {/* <Link to='/kontakt'> */}
+                      <div onClick={() => setModalOpen(true)}>
+                        <p>KONTAKT</p>
+                      </div>
+                      {/* </Link> */}
+                    </div>
+           }
         </div>
       )}
     </Transition>

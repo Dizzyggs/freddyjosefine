@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
-import { MantineProvider, Transition } from '@mantine/core';
+import { MantineProvider, Transition, Modal } from '@mantine/core';
 import Header from '../Header/Header';
 import '@mantine/core/styles.css';
 import { cssVariablesResolver } from '../utils/utils';
@@ -10,6 +10,7 @@ const Home = () => {
   const [rendered, setRendered] = useState(false);
   const [renderInfo, setRenderInfo] = useState(false);
   const [renderTracker, setRenderTracker] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false)
   const welcomeDuration = 400
 
   useEffect(() => {
@@ -23,6 +24,7 @@ const Home = () => {
 
     return () => clearTimeout(timer); // Cleanup timeout
   }, []);
+  
 
   return (
     <MantineProvider cssVariablesResolver={cssVariablesResolver}>
