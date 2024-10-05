@@ -73,6 +73,11 @@
     margin-top: 3rem;
 }
 
+.info-content p {
+    width: 100%;
+    padding-left: 1.5rem;
+}
+
 .tidplan-div {
     display: flex;
     flex-direction: column;
@@ -104,6 +109,9 @@
         margin-top: 30%;
         padding-bottom: 5rem;
         justify-content: unset;
+    }
+    .info-content p {
+        padding-left: 0rem;
     }
 }
 

@@ -30,21 +30,27 @@ const Header = () => {
                 <div className='people-kontakt'>
                   <div className='person'>
                     <h2 style={{textDecoration: 'underline', margin: '0'}}>Josefine</h2>
-                    <span style={{display: 'flex', flexDirection: 'row', fontSize: '.5rem', alignItems: 'center'}}>
-                      <IconPhone style={{color: 'black'}} href="tel:073-4332234"/>
-                      <p href="tel:073-4332234">073-4332234</p>
-                    </span>
+                    <a href="tel:0734332234" style={{ textDecoration: 'none', color: 'inherit' }}>
+                      <span style={{ display: 'flex', flexDirection: 'row', fontSize: '.5rem', alignItems: 'center' }}>
+                        <IconPhone style={{ color: 'black' }} />
+                        <p style={{ margin: 0 }}>073-4332234</p> {/* Add margin: 0 to remove default margin from <p> */}
+                      </span>
+                    </a>
                   </div>
                   <div className='person'>
                     <h2 style={{textDecoration: 'underline', margin: '0'}}>Freddy</h2>
-                    <span style={{display: 'flex', flexDirection: 'row', fontSize: '.5rem', alignItems: 'center'}}>
-                      <IconPhone style={{color: 'black'}} href="tel:073-3698223"/>
-                      <p href="tel:073-3698223">073-3698223</p>
-                    </span>
+                    <a href="tel:0733698223" style={{ textDecoration: 'none', color: 'inherit' }}>
+                      <span style={{ display: 'flex', flexDirection: 'row', fontSize: '.5rem', alignItems: 'center' }}>
+                        <IconPhone style={{ color: 'black' }} />
+                        <p>073-3698223</p>
+                      </span>
+                    </a>
                   </div>
                 </div>
-                <h2 style={{textDecoration: 'underline', margin: '0', marginTop: '2rem'}}>Manheims Säteri</h2>
-                <p>011-34 00 98</p>
+                <h2 style={{ textDecoration: 'underline', margin: '0', marginTop: '2rem' }}>Manheims Säteri</h2>
+                  <a href="tel:011340098" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <p style={{ margin: '0' }}>011-34 00 98</p>
+                  </a>
               </div>
            </Modal>
            {!modalOpen &&
