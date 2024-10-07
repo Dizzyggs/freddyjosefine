@@ -1,0 +1,77 @@
+.media-main {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 400;
+  font-family: "Parisienne", cursive;
+  align-items: center;
+
+  p {
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 400;
+    color: #333333;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-top: 5rem !important;
+  }
+}
+
+.grid-gallery-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50rem;
+  width: 90%;
+  border: 1px solid green;
+  overflow-y: auto;
+}
+
+.focusedImgWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* Use fixed positioning to cover the viewport */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  z-index: 100; /* Ensure it’s on top */
+}
+
+.focusedImgWrapper img {
+  max-width: 80%; /* Limit image width */
+  max-height: 80%; /* Limit image height */
+  border-radius: 8px; /* Optional: add rounded corners */
+}
+
+.exit {
+  position: absolute; /* Position exit button relative to the modal */
+  top: 20px; /* Place it at the top */
+  right: 20px; /* Place it at the right */
+  color: red;
+  font-family: 'Courier New', Courier, monospace;
+  cursor: pointer; /* Indicate that it is clickable */
+}
+
+input, button {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.upload-input, button {
+  width: 20%;
+  margin-bottom: 1rem;
+  z-index: 10; /* Ensures it's on top */
+  position: relative;
+}
+
+@media only screen and (max-width: 750px) {
+  .upload-input {
+    width: 90%;
+  }
+}

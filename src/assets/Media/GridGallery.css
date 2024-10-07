@@ -1,0 +1,65 @@
+.grid-gallery {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Adjust the number of columns */
+  gap: 10px; /* Space between images */
+  margin: 20px; /* Optional margin */
+  height: 50rem; /* Set a fixed height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  width: 90%;
+  padding: 10px 0;
+}
+
+.grid-gallery::-webkit-scrollbar { 
+  display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
+}
+
+@media only screen and (max-width: 750px) {
+  .grid-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    height: 100%;
+  }
+  .grid-item img {
+    width: 150px;
+    height: auto;
+  }
+}
+
+.grid-item {
+  overflow: hidden; /* This can help with overflow issues */
+  height: 100%;
+}
+
+.grid-item img {
+  width: 100%;
+  /* height: 200px; */
+  /* Remove height: auto if the image's aspect ratio is already correct */
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  will-change: opacity, transform; /* Hint to browser for optimization */
+}
+
+.grid-item img:hover {
+  opacity: 1;
+  transform: scale(1.02); /* Optional: a slight scale effect for smoother transition */
+}
+.grid-item img:hover {
+  opacity: 1;
+}
+
+/* Span styles */
+.span-1 {
+  grid-column: span 1;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.span-3 {
+  grid-column: span 3;
+}
+
+/* Add more span classes as needed */
