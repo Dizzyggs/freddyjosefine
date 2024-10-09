@@ -27,7 +27,6 @@
   align-items: center;
   height: 50rem;
   width: 90%;
-  border: 1px solid green;
   overflow-y: auto;
 }
 
@@ -58,6 +57,21 @@
   font-family: 'Courier New', Courier, monospace;
   cursor: pointer; /* Indicate that it is clickable */
 }
+.successfullyuploaded {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 4rem;
+  color: green;
+  border: 1px solid green;
+  padding: 0 2rem;
+  border-radius: 5px;
+  background-color: rgba(39, 255, 50, 0.1);
+  font-weight: 600;
+  height: 45px;
+}
 
 input, button {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -74,4 +88,7 @@ input, button {
   .upload-input {
     width: 90%;
   }
+  .successfullyuploaded {
+      top: 2rem;
+   }
 }

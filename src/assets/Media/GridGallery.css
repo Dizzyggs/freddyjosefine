@@ -21,23 +21,22 @@
     height: 100%;
   }
   .grid-item {
-    height: 60px;
+    height: 100px !important;
   }
-  .grid-item img {
-    width: 150px;
-    height: auto;
+  .upload-btn {
+    width: 90%;
   }
 }
 
 .grid-item {
   overflow: hidden; /* This can help with overflow issues */
-  height: 100%;
+  height: 200px;
 }
 
 .grid-item img {
   width: 100%;
-  /* height: 200px; */
-  /* Remove height: auto if the image's aspect ratio is already correct */
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the div while maintaining aspect ratio */
   opacity: 0.6;
   cursor: pointer;
   transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;

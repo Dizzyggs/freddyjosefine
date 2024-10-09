@@ -4,6 +4,7 @@ import { Transition, MantineProvider } from '@mantine/core';
 import GridGallery from './GridGallery';
 import { DummyImages } from '../DummyData/images';
 import { getAllImages } from '../FirebaseApp/FirebaseApp';
+import { IconCheck } from '@tabler/icons-react';
 import './Media.css';
 
 const Media = () => {
@@ -12,6 +13,7 @@ const Media = () => {
   const [weddingImages, setWeddingImages] = useState([]);
   const [focusedImg, setFocusedImg] = useState(null)
   const focusedImgRef = useRef(null);
+  const [successfullyUploaded, setSuccessfullyUploaded] = useState(false)
 
   const handleFileChange = (e) => {
     if (e.target.files[0]) {
@@ -19,23 +21,27 @@ const Media = () => {
     }
   };
 
+  const fetchImages = async () => {
+    const myWeddingImages = await getAllImages();
+    setWeddingImages(myWeddingImages);
+  };
+
   const handleFileUpload = async () => {
     try {
       const url = await handleUpload(file);
-      setUploadedUrl(url); 
-      alert('Image uploaded successfully!');
+      setUploadedUrl(url);
+      setSuccessfullyUploaded(true)
+      fetchImages();
+      setFile(null)
+      setTimeout(() => {
+        setSuccessfullyUploaded(false)
+      }, 4000);
     } catch (error) {
       console.error('Error uploading file:', error);
     }
   };
 
   useEffect(() => {
-    const fetchImages = async () => {
-      const myWeddingImages = await getAllImages();
-      setWeddingImages(myWeddingImages);
-      console.log(weddingImages)
-    };
-  
     fetchImages();
   }, []);
 
@@ -84,6 +90,19 @@ const Media = () => {
       withCssVariables
     >
       <div className='media-main'>
+        <Transition
+          mounted={successfullyUploaded}
+          transition="slide-down"
+          duration={500}
+          timingFunction="ease"
+        >
+          {(styles) =>
+            <div className='successfullyuploaded' style={styles}>
+               <IconCheck style={{ marginRight: '.5rem', color: 'green' }} />
+               Din bild har laddats upp! Tack!
+            </div>
+          }
+        </Transition>
         <div className="flowerpic" />
         <Transition
           mounted={focusedImg !== null}
@@ -101,19 +120,19 @@ const Media = () => {
         </Transition>
         <h1 className='media-header'>Media</h1>
         <p>Här inne kommer alla få möjligheten att ladda upp bilder från bröllopet!</p>
-        <input type="file" onChange={handleFileChange} className='upload-input'/>
-        {file && <button onClick={handleFileUpload} type='button'>Ladda upp bild</button>}
+        <input type="file" onChange={handleFileChange} className='upload-input' />
+        {file && <button onClick={handleFileUpload} type='button' className='upload-btn'>Ladda upp bild</button>}
         <Transition
           mounted={weddingImages?.length > 0}
           transition="rotate-right"
           duration={800}
           timingFunction="ease"
         >
-        {(styles) =>
-            <div className='grid-gallery-wrapper' style={{ opacity: focusedImg !== null ? '0.2' : '1', ...styles}}>
-            <GridGallery imageUrls={weddingImages} handleClick={handleClickCallback} />
-          </div>
-        }
+          {(styles) =>
+            <div className='grid-gallery-wrapper' style={{ opacity: focusedImg !== null ? '0.2' : '1', ...styles }}>
+              <GridGallery imageUrls={weddingImages} handleClick={handleClickCallback} />
+            </div>
+          }
         </Transition>
       </div>
     </MantineProvider>
