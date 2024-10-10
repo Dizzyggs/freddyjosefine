@@ -68,6 +68,9 @@ const Header = () => {
                       <div onClick={() => setModalOpen(true)}>
                         <p>KONTAKT</p>
                       </div>
+                      <Link to='/media'>
+                        <p>MEDIA</p>
+                      </Link>
                       {/* </Link> */}
                     </div>
            }

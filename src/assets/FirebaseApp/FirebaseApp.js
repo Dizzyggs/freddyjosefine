@@ -41,9 +41,18 @@ export const GetGuestsList = async () => {
 // Firebase Storage function to upload an image and return its download URL
 export const handleUpload = async (file) => {
   if (!file) throw new Error("No file provided");
+  const timestamp = Date.now();
+
+  const metadata = {
+    contentType: file.type, // Sets the MIME type automatically from the file
+    customMetadata: {
+      date: timestamp,
+      description: "Date uploaded",
+    },
+  };
 
   const storageRef = ref(storage, `images/${file.name}`);
-  await uploadBytes(storageRef, file);
+  await uploadBytes(storageRef, file, metadata);
   const downloadURL = await getDownloadURL(storageRef);
   return downloadURL; // URL for the uploaded image
 };
@@ -51,16 +60,27 @@ export const handleUpload = async (file) => {
 export const getAllImages = async () => {
   const myImages = [];
   const listRef = ref(storage, 'images/');
-  
+
   try {
     const response = await listAll(listRef);
     for (const item of response.items) {
       const url = await getDownloadURL(item);
-      myImages.push(url);
+      const metadata = await getMetadata(item); // Fetch metadata for each item
+
+      myImages.push({
+        url,
+        metadata: metadata.customMetadata, // Add custom metadata to the image object
+      });
     }
+
+    // Sort images by date in descending order (newest first)
+    myImages.sort((a, b) => {
+      return new Date(b.metadata.date) - new Date(a.metadata.date);
+    });
+
   } catch (error) {
     console.error("Error fetching images:", error);
   }
-  
+
   return myImages;
 };

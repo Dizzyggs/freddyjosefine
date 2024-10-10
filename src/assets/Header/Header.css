@@ -40,8 +40,9 @@ p:hover {
 }
 .wrapper {
   width: 100vw;
-  height: 100vh;
-  position: absolute;
+  max-height: 100vh;
+  position: relative;
+  z-index: 1;
 }
 
 .modalmain {
