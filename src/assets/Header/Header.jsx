@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import { IconPhone } from '@tabler/icons-react';
 import useMobileDetect from '../hooks/useMobileDetect';
 
-const Header = () => {
+const Header = (props) => {
+  const { positionType } = props
   const [rendered, setRendered] = useState(false)
   const [modalOpen, setModalOpen] = useState(false)
   const isMobile = useMobileDetect();
@@ -22,7 +23,7 @@ const Header = () => {
       timingFunction="ease"
     >
       {(styles) => (
-        <div className='wrapper'>
+        <div className='wrapper' style={{position: positionType == 'absolute' ? 'absolute' : 'relative', height: positionType == 'absolute' ? '100%' : ''}}>
            <Modal opened={modalOpen} onClose={() => setModalOpen(false)} title="" size={isMobile? '90vw' : '40vw'} centered transitionProps={{ transition: 'fade-down', duration: 350 }}>
               <div className='modalmain'>
                 <div className="flowerpic2" />

@@ -64,9 +64,9 @@ const OSA = () => {
   return (
     <MantineProvider defaultColorScheme="dark" cssVariablesResolver={cssVariablesResolver} withCssVariables>
       <div className='osa-main'>
-        <Header />
+        <Header positionType='absolute'/>
         <div className="flowerpic" />
-        <div className='content'>
+        <div className='osa-content'>
           {!sentEmail ? (
             <>
               <h1>Låt oss veta om du/ni kommer!</h1>

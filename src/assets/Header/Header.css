@@ -53,7 +53,7 @@ p:hover {
   align-items: center;
   flex-direction: column;
   position: relative; /* Needed for the background element positioning */
-  z-index: 5;
+  z-index: 10;
   opacity: 1 !important;
   background-color: #f7d195;
 }
@@ -77,7 +77,7 @@ p:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('https://media.discordapp.net/attachments/1098739160631750716/1274823544793993216/dizzylol_summer_field_filled_with_grass_and_alot_of_flowers_sun_5d5903d9-45df-4909-84d8-716987f7884b.png?ex=67019df2&is=67004c72&hm=61ab5274246ae48ef851bc1216dd5fed35cb52077a7d387014e0cc90106f03a6&=&format=webp&quality=lossless&width=664&height=664');
+  background: url('https://golflivet.se/wp-content/uploads/2023/07/bravikens-gk.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
