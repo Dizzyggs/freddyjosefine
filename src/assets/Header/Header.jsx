@@ -65,14 +65,12 @@ const Header = (props) => {
                       <Link to='/osa'>
                         <p>OSA</p>
                       </Link>
-                      {/* <Link to='/kontakt'> */}
-                      <div onClick={() => setModalOpen(true)}>
+                      <div onClick={() => setModalOpen(true)} className='kontaktanchor'>
                         <p>KONTAKT</p>
                       </div>
                       <Link to='/media'>
                         <p>MEDIA</p>
                       </Link>
-                      {/* </Link> */}
                     </div>
            }
         </div>
