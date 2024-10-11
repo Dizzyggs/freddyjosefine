@@ -23,3 +23,8 @@
   color: #333333;
 }
 
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  width: 100vw; /* Set viewport width */
+  position: relative; /* Stabilize positioning */
+}

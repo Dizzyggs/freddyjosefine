@@ -113,7 +113,7 @@ const Media = () => {
         <Transition
           mounted={focusedImg !== null}
           transition="fade"
-          duration={800}
+          duration={500}
           timingFunction="ease"
         >
           {(styles) =>
@@ -125,7 +125,9 @@ const Media = () => {
           }
         </Transition>
         <h1 className='media-header'>Media</h1>
-        <p>Här inne kommer alla få möjligheten att ladda upp bilder från bröllopet!</p>
+        <p style={{padding: '0 1rem'}}>
+          Här inne kommer alla få möjligheten att ladda upp bilder från bröllopet!
+        </p>
         {!loadingImages ? (
           <>
             <input type="file" onChange={handleFileChange} className='upload-input' />

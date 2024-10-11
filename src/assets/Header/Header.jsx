@@ -50,27 +50,32 @@ const Header = (props) => {
                 </div>
                 <h2 style={{ textDecoration: 'underline', margin: '0', marginTop: '2rem' }}>Manheims Säteri</h2>
                   <a href="tel:011340098" style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <p style={{ margin: '0' }}>011-34 00 98</p>
+                  <span style={{ display: 'flex', flexDirection: 'row', fontSize: '.5rem', alignItems: 'center' }}>
+                      <IconPhone style={{ color: 'black' }} />
+                      <p style={{ margin: '0' }}>011-34 00 98</p>
+                    </span>
                   </a>
               </div>
            </Modal>
            {!modalOpen &&
                       <div className='header-main' style={styles}>
-                      <Link to='/'>
-                        <p>HEM</p>
-                      </Link>
-                      <Link to='/info'>
-                        <p>INFORMATION</p>
-                      </Link>
-                      <Link to='/osa'>
-                        <p>OSA</p>
-                      </Link>
-                      <div onClick={() => setModalOpen(true)} className='kontaktanchor'>
-                        <p>KONTAKT</p>
+                      <div className='header-items-wrapper'>
+                        <Link to='/'>
+                          <p>HEM</p>
+                        </Link>
+                        <Link to='/info'>
+                          <p>INFORMATION</p>
+                        </Link>
+                        <Link to='/osa'>
+                          <p>OSA</p>
+                        </Link>
+                        <div onClick={() => setModalOpen(true)} className='kontaktanchor'>
+                          <p>KONTAKT</p>
+                        </div>
+                        <Link to='/media'>
+                          <p>MEDIA</p>
+                        </Link>
                       </div>
-                      <Link to='/media'>
-                        <p>MEDIA</p>
-                      </Link>
                     </div>
            }
         </div>

@@ -69,14 +69,15 @@ export const getAllImages = async () => {
 
       myImages.push({
         url,
-        metadata: metadata.customMetadata, // Add custom metadata to the image object
+        metadata: {
+          ...metadata.customMetadata,
+          timeCreated: Date.parse(metadata.timeCreated) // Convert ISO string to milliseconds
+        },
       });
     }
 
-    // Sort images by date in descending order (newest first)
-    myImages.sort((a, b) => {
-      return new Date(b.metadata.date) - new Date(a.metadata.date);
-    });
+    // Sort images by timeCreated in descending order (newest first)
+    myImages.sort((a, b) => b.metadata.timeCreated - a.metadata.timeCreated);
 
   } catch (error) {
     console.error("Error fetching images:", error);
