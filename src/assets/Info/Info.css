@@ -110,6 +110,7 @@
         padding-bottom: 5rem;
         justify-content: unset;
         padding: 0 1rem;
+        overflow-x: hidden;
     }
     .info-content p {
         padding-left: 0rem;
