@@ -21,6 +21,10 @@
   opacity: 0.2;
 }
 
+.mantine-Radio-body {
+  margin-top: .5rem;
+}
+
 .osa-content {
   opacity: 1;
   z-index: 5;
