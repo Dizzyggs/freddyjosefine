@@ -105,10 +105,11 @@
         padding: 0 15px;
     }
     .info-content {
-        max-width: 85%;
+        max-width: 100%;
         margin-top: 50%;
         padding-bottom: 5rem;
         justify-content: unset;
+        padding: 0 1rem;
     }
     .info-content p {
         padding-left: 0rem;

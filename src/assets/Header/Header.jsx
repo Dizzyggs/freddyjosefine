@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Header.css'
 import { Transition, Modal } from '@mantine/core';
 import { Link } from 'react-router-dom';
-import { IconPhone } from '@tabler/icons-react';
+import { IconPhone, IconHome } from '@tabler/icons-react';
 import useMobileDetect from '../hooks/useMobileDetect';
 
 const Header = (props) => {

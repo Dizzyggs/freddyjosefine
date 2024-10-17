@@ -69,6 +69,7 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 2rem; /* Add margin for better spacing */
+  margin-top: 10rem;
 }
 
 .total h1 {
@@ -76,12 +77,13 @@
   margin: 0;
 }
 
+
 @media only screen and (max-width: 750px) {
   .isComing-div {
     width: 100vw;
   }
   .total {
-    margin-top: 3rem;
+    margin-top: 6rem;
   }
   .isComing-div {
     max-height: 20rem;

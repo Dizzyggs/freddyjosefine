@@ -51,7 +51,7 @@ const AdminPage = () => {
   return (
     <MantineProvider cssVariablesResolver={cssVariablesResolver}>
       <div className='adminmain' style={{justifyContent: loadingResults ? 'center' : 'flex-start'}}>
-        <Header />
+        {!loadingResults && <Header />}
         {loadingResults ? (
           <>
           <Loader size={'md'} /> 
