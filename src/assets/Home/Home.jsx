@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 import '@mantine/core/styles.css';
 import { cssVariablesResolver } from '../utils/utils';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazyload';
 
 const Home = () => {
   const [rendered, setRendered] = useState(false);
@@ -30,7 +31,10 @@ const Home = () => {
     <MantineProvider cssVariablesResolver={cssVariablesResolver}>
       <div className="main">
         <Header />
-        <div className="flowerpic" />
+        {/* <div className="flowerpic" /> */}
+        {/* <LazyLoad height={'100%'} width={'100%'}> */}
+          <img className='flowerpic' src={"../bg.png"}/>
+        {/* </LazyLoad> */}
         <div className="welcomediv">
           <Transition
             mounted={rendered}
