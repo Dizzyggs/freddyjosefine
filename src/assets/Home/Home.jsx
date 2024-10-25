@@ -30,7 +30,7 @@ const Home = () => {
     <MantineProvider cssVariablesResolver={cssVariablesResolver}>
       <div className="main">
         <Header />
-        <img className='flowerpic' src={"../bg.png"} alt='bg'/>
+        <img className='flowerpic' src={"../bg.png"} alt='bg' loading='lazy'/>
         <div className="welcomediv">
           <Transition
             mounted={rendered}
