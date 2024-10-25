@@ -11,7 +11,6 @@ const Home = () => {
   const [rendered, setRendered] = useState(false);
   const [renderInfo, setRenderInfo] = useState(false);
   const [renderTracker, setRenderTracker] = useState(false)
-  const [modalOpen, setModalOpen] = useState(false)
   const welcomeDuration = 400
 
   useEffect(() => {
@@ -31,10 +30,7 @@ const Home = () => {
     <MantineProvider cssVariablesResolver={cssVariablesResolver}>
       <div className="main">
         <Header />
-        {/* <div className="flowerpic" /> */}
-        {/* <LazyLoad height={'100%'} width={'100%'}> */}
-          <img className='flowerpic' src={"../bg.png"}/>
-        {/* </LazyLoad> */}
+        <img className='flowerpic' src={"../bg.png"} alt='bg'/>
         <div className="welcomediv">
           <Transition
             mounted={rendered}
@@ -78,11 +74,6 @@ const Home = () => {
                       <p>
                         Den största gåvan för oss är ditt deltagande under vår stora dag. Vill du ändå lämna en present tar vi tacksamt emot ett bidrag till vår bröllopsresa.
                       </p>
-                      {/* <p>
-                        Efter ceremonin i kyrkan rör vi oss utåt mot{' '}
-                        <span className='fat'>Manheims Säteri</span>, där blir det lite
-                        mingel, mat och fest framåt kvällen!
-                      </p> */}
                     </div>
                   )}
                 </Transition>
