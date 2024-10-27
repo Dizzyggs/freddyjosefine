@@ -5,7 +5,7 @@ import Header from '../Header/Header';
 import '@mantine/core/styles.css';
 import { cssVariablesResolver } from '../utils/utils';
 import { Link } from 'react-router-dom';
-import LazyLoad from 'react-lazyload';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
   const [rendered, setRendered] = useState(false);
@@ -29,6 +29,9 @@ const Home = () => {
   return (
     <MantineProvider cssVariablesResolver={cssVariablesResolver}>
       <div className="main">
+          <Helmet>
+          <link rel="preload" href="../bg.png" as="image" />
+        </Helmet>
         <Header />
         <img className='flowerpic' src={"../bg.png"} alt='bg' loading='lazy'/>
         <div className="welcomediv">
