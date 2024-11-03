@@ -30,29 +30,29 @@ const Header = (props) => {
                 <h1 className='normal-font' style={{ marginTop: isMobile ? '-5rem' : '0' }}>Kontakt</h1>
                 <div className='people-kontakt'>
                   <div className='person'>
-                    <h2 style={{textDecoration: 'underline', margin: '0'}}>Josefine</h2>
-                    <a href="tel:0734332234" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <h2 style={{margin: '0'}}>Josefine</h2>
+                    <a href="tel:0734332234" style={{ textDecoration: 'underline', color: 'inherit'}}>
                       <span style={{ display: 'flex', flexDirection: 'row', fontSize: '.5rem', alignItems: 'center' }}>
                         <IconPhone style={{ color: 'black' }} />
-                        <p style={{ margin: 0 }}>073-4332234</p> {/* Add margin: 0 to remove default margin from <p> */}
+                        <p style={{margin: '0 0 0 .3rem'}}>073-4332234</p> {/* Add margin: 0 to remove default margin from <p> */}
                       </span>
                     </a>
                   </div>
                   <div className='person'>
-                    <h2 style={{textDecoration: 'underline', margin: '0'}}>Freddy</h2>
-                    <a href="tel:0733698223" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <h2 style={{margin: '0'}}>Freddy</h2>
+                    <a href="tel:0733698223" style={{ textDecoration: 'underline', color: 'inherit' }}>
                       <span style={{ display: 'flex', flexDirection: 'row', fontSize: '.5rem', alignItems: 'center' }}>
-                        <IconPhone style={{ color: 'black' }} />
-                        <p>073-3698223</p>
+                        <IconPhone style={{ color: 'black'}} />
+                        <p style={{margin: '0 0 0 .3rem'}}>073-3698223</p>
                       </span>
                     </a>
                   </div>
                 </div>
-                <h2 style={{ textDecoration: 'underline', margin: '0', marginTop: '2rem' }}>Manheims Säteri</h2>
-                  <a href="tel:011340098" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <h2 style={{ margin: '0', marginTop: '2rem' }}>Manheims Säteri</h2>
+                  <a href="tel:011340098" style={{ textDecoration: 'underline',  color: 'inherit' }}>
                   <span style={{ display: 'flex', flexDirection: 'row', fontSize: '.5rem', alignItems: 'center' }}>
                       <IconPhone style={{ color: 'black' }} />
-                      <p style={{ margin: '0' }}>011-34 00 98</p>
+                      <p style={{margin: '0 0 0 .3rem'}}>011-34 00 98</p>
                     </span>
                   </a>
               </div>

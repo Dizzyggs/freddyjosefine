@@ -64,10 +64,10 @@ const OSA = () => {
   return (
     <MantineProvider defaultColorScheme="dark" cssVariablesResolver={cssVariablesResolver} withCssVariables>
       <div className='osa-main'>
-        <Header positionType='absolute'/>
+        <Header positionType='absolute' />
         <div className="flowerpic" />
         <div className='osa-content'>
-          {!sentEmail ? (
+          {!sentEmail && (
             <>
               <h1>Låt oss veta om du/ni kommer!</h1>
 
@@ -120,9 +120,16 @@ const OSA = () => {
                 )}
               </Transition>
             </>
-          ) : (
-            <h1 className='answersent'>Tack för du skickade ditt/erat svar!</h1>
           )}
+          <Transition
+            mounted={sentEmail}
+            transition="fade"
+            duration={sentEmail ? 850: 0}
+            timingFunction="ease"
+          > {(styles) =>
+
+            <h1 className='answersent' style={styles}>Tack för du skickade ditt/erat svar!</h1>
+            }</Transition>
         </div>
       </div>
     </MantineProvider>
