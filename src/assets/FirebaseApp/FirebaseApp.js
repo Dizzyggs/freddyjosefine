@@ -38,9 +38,15 @@ export const GetGuestsList = async () => {
   return guests;
 };
 
-// Firebase Storage function to upload an image and return its download URL
 export const handleUpload = async (file) => {
   if (!file) throw new Error("No file provided");
+
+  // Check if file is an image
+  const allowedImageTypes = ["image/jpeg", "image/png", "image/gif", "image/webp"];
+  if (!allowedImageTypes.includes(file.type)) {
+    return('error')
+  }
+
   const timestamp = Date.now();
 
   const metadata = {
@@ -56,6 +62,7 @@ export const handleUpload = async (file) => {
   const downloadURL = await getDownloadURL(storageRef);
   return downloadURL; // URL for the uploaded image
 };
+
 
 export const getAllImages = async () => {
   const myImages = [];

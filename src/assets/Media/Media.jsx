@@ -3,7 +3,7 @@ import { handleUpload } from '../FirebaseApp/FirebaseApp';
 import { Transition, MantineProvider, Loader } from '@mantine/core';
 import GridGallery from './GridGallery';
 import { getAllImages } from '../FirebaseApp/FirebaseApp';
-import { IconCheck } from '@tabler/icons-react';
+import { IconCheck, IconX } from '@tabler/icons-react';
 import Header from '../Header/Header'
 import './Media.css';
 
@@ -15,6 +15,7 @@ const Media = () => {
   const focusedImgRef = useRef(null);
   const [successfullyUploaded, setSuccessfullyUploaded] = useState(false)
   const [loadingImages, setLoadingImages] = useState(false)
+  const [wrongUpload, setWrongUpload] = useState(false)
 
   const handleFileChange = (e) => {
     if (e.target.files[0]) {
@@ -30,6 +31,12 @@ const Media = () => {
   const handleFileUpload = async () => {
     try {
       const url = await handleUpload(file);
+      if(url == 'error') {
+        setWrongUpload(true);
+        setTimeout(() => {
+          setWrongUpload(false)
+        }, 4000);
+      } else {
       setUploadedUrl(url);
       setSuccessfullyUploaded(true)
       fetchImages();
@@ -37,6 +44,7 @@ const Media = () => {
       setTimeout(() => {
         setSuccessfullyUploaded(false)
       }, 4000);
+    }
     } catch (error) {
       console.error('Error uploading file:', error);
     }
@@ -106,6 +114,19 @@ const Media = () => {
             <div className='successfullyuploaded' style={styles}>
               <IconCheck style={{ marginRight: '.5rem', color: 'green' }} />
               Din bild har laddats upp! Tack!
+            </div>
+          }
+        </Transition>
+        <Transition
+          mounted={wrongUpload}
+          transition="slide-down"
+          duration={500}
+          timingFunction="ease"
+        >
+          {(styles) =>
+            <div className='wrongupload' style={styles}>
+              <IconX style={{ marginRight: '.5rem', color: 'red' }} />
+              Endast bilder kan laddas upp, inga videos!
             </div>
           }
         </Transition>
