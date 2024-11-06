@@ -68,9 +68,9 @@ const AdminPage = () => {
                 <h2>✅ Kommer</h2>
                 <p>Specialkost ?</p>
               </div>
-              <div className='isComing-div'>
-                {isComing?.length > 0 ? (
-                  isComing.map((guest, index) => (
+              {isComing?.length > 0 && (
+                <div className='guests-coming'>
+                  {isComing.map((guest, index) => (
                     <div className='guest-div' key={index}>
                       <div className='guest-name'>
                         {guest?.namn}
@@ -79,11 +79,9 @@ const AdminPage = () => {
                         {guest?.specialkost}
                       </div>
                     </div>
-                  ))
-                ) : (
-                  <p>No guests are coming.</p>
-                )}
-              </div>
+                  ))}
+                </div>
+              )}
               {isNotComing?.length > 0 && (
                 <div className='isComing-div'>
                   <div className='answer-header'>
@@ -98,6 +96,10 @@ const AdminPage = () => {
                   ))}
                 </div>
               )}
+              <div className='no-guests-osat'>
+                <h2>Inga har osat ännu.</h2>
+              </div>
+              {/* {isComing?.length == 0 && isNotComing?.length == 0 && <h2>Inga har osat ännu.</h2>} */}
             </div>
           </>
         )}
