@@ -130,7 +130,7 @@ const OSA = () => {
 
             <h1 className='answersent' style={styles}>Tack för du skickade ditt/erat svar!</h1>
             }</Transition> */}
-            {sentEmail && <h1 className='answersent' style={styles}>Tack för du skickade ditt/erat svar!</h1>}
+            {sentEmail && <h1 className='answersent'>Tack för du skickade ditt/erat svar!</h1>}
         </div>
       </div>
     </MantineProvider>
