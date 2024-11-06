@@ -121,7 +121,7 @@ const OSA = () => {
               </Transition>
             </>
           )}
-          <Transition
+          {/* <Transition
             mounted={sentEmail}
             transition="fade"
             duration={sentEmail ? 850: 0}
@@ -129,7 +129,8 @@ const OSA = () => {
           > {(styles) =>
 
             <h1 className='answersent' style={styles}>Tack för du skickade ditt/erat svar!</h1>
-            }</Transition>
+            }</Transition> */}
+            {sentEmail && <h1 className='answersent' style={styles}>Tack för du skickade ditt/erat svar!</h1>}
         </div>
       </div>
     </MantineProvider>
