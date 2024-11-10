@@ -77,6 +77,9 @@
     /* font-family: "futura-pt-medium"; */
     justify-content: center;
     margin-top: 3rem;
+    p {
+        color: black !important;
+    }
 }
 
 .info-content p {

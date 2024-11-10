@@ -31,16 +31,16 @@ const AdminPage = () => {
 
       guests.forEach((guest) => {
         if (guest.coming === true) {
-          coming.push(guest); // Add guest to "isComing" array
+          coming.push(guest);
         } else {
-          notComing.push(guest); // Add guest to "isNotComing" array
+          notComing.push(guest);
         }
       });
 
-      setIsComing(coming); // Update the isComing state with the filtered list
-      setIsNotComing(notComing); // Update the isNotComing state with the filtered list
+      setIsComing(coming);
+      setIsNotComing(notComing);
     }
-  }, [guests]); // Runs whenever guests change
+  }, [guests]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -50,12 +50,12 @@ const AdminPage = () => {
 
   return (
     <MantineProvider cssVariablesResolver={cssVariablesResolver}>
-      <div className='adminmain' style={{justifyContent: loadingResults ? 'center' : 'flex-start'}}>
+      <div className='adminmain' style={{ justifyContent: loadingResults ? 'center' : 'flex-start' }}>
         {!loadingResults && <Header />}
         {loadingResults ? (
           <>
-          <Loader size={'md'} /> 
-          <p>Laddar data...</p>
+            <Loader size={'md'} />
+            <p>Laddar data...</p>
           </>
         ) : (
           <>
@@ -85,8 +85,8 @@ const AdminPage = () => {
               {isNotComing?.length > 0 && (
                 <div className='isComing-div'>
                   <div className='answer-header'>
-                  <h2>❌ Kommer Inte</h2>
-              </div>
+                    <h2>❌ Kommer Inte</h2>
+                  </div>
                   {isNotComing.map((guest, index) => (
                     <div className='guest-div' key={index}>
                       <div className='guest-name'>
@@ -96,10 +96,11 @@ const AdminPage = () => {
                   ))}
                 </div>
               )}
-              <div className='no-guests-osat'>
-                <h2>Inga har osat ännu.</h2>
-              </div>
-              {/* {isComing?.length == 0 && isNotComing?.length == 0 && <h2>Inga har osat ännu.</h2>} */}
+              {isComing?.length == 0 && isNotComing?.length == 0 &&
+                <div className='no-guests-osat'>
+                  <h2>Inga har osat ännu.</h2>
+                </div>
+              }
             </div>
           </>
         )}
