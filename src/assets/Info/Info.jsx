@@ -67,14 +67,14 @@ const Info = () => {
                 </p>
                 <div className='tidplan-div'>
                   <h3>Tidsplan</h3>
-                  <p><span className='underline'>15-15.40:</span> Vigsel i Styrstad kyrka</p>
+                  <p><span className='underline'>15.00-15.40:</span> Vigsel i Styrstad kyrka</p>
                   <p><span className='underline'>15.40-16.15:</span> Mingel och gruppfotografering utanför kyrkan</p>
                   <p><span className='underline'>16.30:</span> Gästerna anländer till Manheims säteri där det bjuds på ett glas bubbel och snittar</p>
                   <p><span className='underline'>17.15:</span> Brudparet anländer</p>
                   <p><span className='underline'>18.00-19.30:</span> middag (buffé) på övervåningen</p>
                   <p><span className='underline'>19.30-20.30:</span> dessert och kaffe</p>
                   <p><span className='underline'>20.30:</span> Fest på nedervåningen (med DJ XX)</p>
-                  <p><span className='underline'>23.00:</span> Pizzaslice</p>
+                  {/* <p><span className='underline'>23.00:</span> Pizzaslice</p> */}
                   <p><span className='underline'>01.00:</span> Festen rundas av</p>
                 </div>
                 </div>

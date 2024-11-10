@@ -70,7 +70,6 @@ const OSA = () => {
           {!sentEmail && (
             <>
               <h1>Låt oss veta om du/ni kommer!</h1>
-
               <div className='input-wrapper'>
                 <label>
                   Namn
@@ -80,6 +79,7 @@ const OSA = () => {
                     onChange={(e) => setNames(e.target.value)}
                     value={names}
                     required
+                    placeholder='Om ni är två fyll i bådas namn.'
                   />
                 </label>
                 <label style={{ marginTop: '.5rem' }}>
@@ -104,7 +104,7 @@ const OSA = () => {
                 </RadioGroup>
               </div>
               <Button style={{ marginTop: '1.5rem' }} onClick={handleSendAnswer} loading={loading}>
-                Skicka Svar
+                Skicka svar
               </Button>
 
               <Transition

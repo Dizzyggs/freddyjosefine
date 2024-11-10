@@ -101,4 +101,15 @@ input:focus{
   .error-div {
     width: 80%;
   }
+  .info-p-tag {
+    margin: 5px 0 5px 0;
+  }
+}
+
+p {
+  box-shadow: none;
+  color: white;
+  &:hover {
+    text-shadow: none;
+  }
 }

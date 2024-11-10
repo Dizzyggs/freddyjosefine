@@ -74,6 +74,7 @@
     overflow-y: auto;
     align-items: center;
     font-family: "Roboto", sans-serif;
+    /* font-family: "futura-pt-medium"; */
     justify-content: center;
     margin-top: 3rem;
 }
