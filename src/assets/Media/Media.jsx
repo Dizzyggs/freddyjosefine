@@ -146,8 +146,8 @@ const Media = () => {
           }
         </Transition>
         <h1 className='media-header'>Media</h1>
-        <p style={{padding: '0 1rem'}}>
-          Här inne kommer alla få möjligheten att ladda upp bilder från bröllopet!
+        <p style={{padding: '0 1rem', color: 'white', zIndex: '3'}}>
+          Här får du möjligheten att ladda upp bilder från bröllopet.
         </p>
         {!loadingImages ? (
           <>
@@ -176,10 +176,10 @@ const Media = () => {
         ) : (
           <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: '2rem'}}>
           <Loader size='md' />
-          <p style={{margin: '.5rem 0 0 0', fontSize: '.95rem'}}>Laddar bilder..</p>
+            <p style={{margin: '.5rem 0 0 0', fontSize: '.95rem'}}>Laddar bilder..</p>
           </div>
         )}
-        {!loadingImages && weddingImages?.length == 0 && <p style={{margin: '.5rem 0 0 0', fontSize: '.95rem'}}>Inga bilder har laddats upp ännu.</p>}
+        {!loadingImages && weddingImages?.length == 0 && <p style={{margin: '.5rem 0 0 0', fontSize: '.95rem', color: 'white', zIndex: '3'}}>Inga bilder har laddats upp ännu.</p>}
       </div>
     </MantineProvider>
   );

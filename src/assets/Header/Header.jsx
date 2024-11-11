@@ -31,7 +31,7 @@ const Header = (props) => {
                 <div className='people-kontakt'>
                   <div className='person'>
                     <h2 style={{margin: '0'}}>Josefine</h2>
-                    <a href="tel:0734332234" style={{ textDecoration: 'underline', color: 'inherit'}}>
+                    <a href="tel:0734332234" style={{ textDecoration: 'underline', color: 'white'}}>
                       <span style={{ display: 'flex', flexDirection: 'row', fontSize: '.5rem', alignItems: 'center' }}>
                         <IconPhone style={{ color: 'black' }} />
                         <p style={{margin: '0 0 0 .3rem'}}>073-4332234</p> {/* Add margin: 0 to remove default margin from <p> */}
@@ -40,7 +40,7 @@ const Header = (props) => {
                   </div>
                   <div className='person'>
                     <h2 style={{margin: '0'}}>Freddy</h2>
-                    <a href="tel:0733698223" style={{ textDecoration: 'underline', color: 'inherit' }}>
+                    <a href="tel:0733698223" style={{ textDecoration: 'underline', color: 'white' }}>
                       <span style={{ display: 'flex', flexDirection: 'row', fontSize: '.5rem', alignItems: 'center' }}>
                         <IconPhone style={{ color: 'black'}} />
                         <p style={{margin: '0 0 0 .3rem'}}>073-3698223</p>
@@ -48,11 +48,11 @@ const Header = (props) => {
                     </a>
                   </div>
                 </div>
-                <h2 style={{ margin: '0', marginTop: '2rem' }}>Manheims Säteri</h2>
-                  <a href="tel:011340098" style={{ textDecoration: 'underline',  color: 'inherit' }}>
+                <h2 style={{ margin: '0', marginTop: '2rem' }}>Toastmaster Simon</h2>
+                  <a href="tel:011340098" style={{ textDecoration: 'underline',  color: 'white' }}>
                   <span style={{ display: 'flex', flexDirection: 'row', fontSize: '.5rem', alignItems: 'center' }}>
                       <IconPhone style={{ color: 'black' }} />
-                      <p style={{margin: '0 0 0 .3rem'}}>011-34 00 98</p>
+                      <p style={{margin: '0 0 0 .3rem'}}>070-XXXXXX</p>
                     </span>
                   </a>
               </div>

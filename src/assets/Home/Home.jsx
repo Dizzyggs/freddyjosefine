@@ -45,7 +45,7 @@ const Home = () => {
               <div style={styles} className="welcome-content">
                 <div className='hero-section' style={{marginTop: renderTracker ? '4rem' : '0rem'}}>
                   <h1>Josefine & Freddy</h1>
-                  <p className='font'>Vår dag</p>
+                  <p className='font'>Välkomna att fira vigseln mellan oss</p>
                 </div>
                 <br />
                 <Transition
@@ -57,25 +57,24 @@ const Home = () => {
                 >
                   {(infostyles) => (
                     <div className="info" style={infostyles}>
-                      <p>
-                        Varmt välkommen att fira vigseln mellan Josefine och Freddy, lördagen den 22 mars 2025, klockan 16.00 i Matteus Kyrka.
-                      </p>
-                      <br/>
+                      <div className='home-info-wrapper'>
+                        <p>* Lördag 22/03-2025</p>
+                        <p>* Kl 16:00 i Matteus Kyrka</p>
+                        <p style={{marginLeft: '.7rem'}}> med efterföljande middag och fest på Manheims säteri</p>
+                      </div>
+                      <div>
                       <Link to={'/osa'}>
                         <p>
                           <span style={{textDecoration: 'underline'}}>OSA</span> på denna hemsida senast 1 februari. Barn är välkomna på vår vigsel, men under middag och fest väljer vi att fira utan dem små. Undantag för de som ammar.
                         </p>
                       </Link>
-                      <p style={{margin: '.5rem 0'}}>
-                        <span style={{textDecoration: 'underline'}}>Klädsel:</span> Ej specificerad
-                      </p>
-                      <p>
+                      <p style={{marginTop: '1rem'}}>
                         Se fliken <Link to={'/info'}><span style={{textDecoration: 'underline'}}>Information</span></Link> för mer ingående info om dagen.
                       </p>
-                      <br/>
-                      <p>
+                      <p style={{marginTop: '1rem'}}>
                         Den största gåvan för oss är ditt deltagande under vår stora dag. Vill du ändå lämna en present tar vi tacksamt emot ett bidrag.
                       </p>
+                      </div>
                     </div>
                   )}
                 </Transition>

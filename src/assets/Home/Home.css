@@ -76,6 +76,9 @@ body {
     width: 100% !important;
     margin-top: 1rem !important;
   }
+  .home-info-wrapper {
+    margin-bottom: 1rem;
+  }
 }
 
 .hero-section {

@@ -79,7 +79,7 @@ const OSA = () => {
                     onChange={(e) => setNames(e.target.value)}
                     value={names}
                     required
-                    placeholder='Om ni är två fyll i bådas namn.'
+                    placeholder='Om ni är två, fyll i bådas namn'
                   />
                 </label>
                 <label style={{ marginTop: '.5rem' }}>
@@ -87,7 +87,7 @@ const OSA = () => {
                   <input
                     type="text"
                     name="kost"
-                    placeholder='T.ex: 1 Vegetarian (Om inget, lämna blankt)'
+                    placeholder='T.ex: 1 Vegetarian (om inget, lämna blankt)'
                     onChange={(e) => setKost(e.target.value)}
                     value={kost}
                   />
