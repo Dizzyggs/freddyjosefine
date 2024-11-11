@@ -45,7 +45,7 @@ const Home = () => {
               <div style={styles} className="welcome-content">
                 <div className='hero-section' style={{marginTop: renderTracker ? '4rem' : '0rem'}}>
                   <h1>Josefine & Freddy</h1>
-                  <p className='font'>Våran dag</p>
+                  <p className='font'>Vår dag</p>
                 </div>
                 <br />
                 <Transition
@@ -58,24 +58,23 @@ const Home = () => {
                   {(infostyles) => (
                     <div className="info" style={infostyles}>
                       <p>
-                        Varmt välkommen att fira vigseln mellan oss Lördagen den XX maj 2025, klockan 15.00 i Styrstad Kyrka.
+                        Varmt välkommen att fira vigseln mellan Josefine och Freddy, lördagen den 22 mars 2025, klockan 16.00 i Matteus Kyrka.
                       </p>
                       <br/>
-                    
-                      <p>
-                        <span style={{textDecoration: 'underline'}}>Klädsel:</span> Ej specificerad
-                      </p>
                       <Link to={'/osa'}>
                         <p>
-                          <span style={{textDecoration: 'underline'}}>OSA</span> på hemsidan senast den XX XX 2025.
+                          <span style={{textDecoration: 'underline'}}>OSA</span> på denna hemsida senast 1 februari. Barn är välkomna på vår vigsel, men under middag och fest väljer vi att fira utan dem små. Undantag för de som ammar.
                         </p>
                       </Link>
+                      <p style={{margin: '.5rem 0'}}>
+                        <span style={{textDecoration: 'underline'}}>Klädsel:</span> Ej specificerad
+                      </p>
                       <p>
-                        Se fliken <Link to={'/info'}><span style={{textDecoration: 'underline'}}>Information</span></Link> för en mer detaljerad tidplan samt Q/A.
+                        Se fliken <Link to={'/info'}><span style={{textDecoration: 'underline'}}>Information</span></Link> för mer ingående info om dagen.
                       </p>
                       <br/>
                       <p>
-                        Den största gåvan för oss är ditt deltagande under vår stora dag. Vill du ändå lämna en present tar vi tacksamt emot ett bidrag till vår bröllopsresa.
+                        Den största gåvan för oss är ditt deltagande under vår stora dag. Vill du ändå lämna en present tar vi tacksamt emot ett bidrag.
                       </p>
                     </div>
                   )}
