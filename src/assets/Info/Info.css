@@ -33,16 +33,6 @@
     }
 }
 
-.flowerpic {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('../bg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
 .mainwrapp {
     display: flex;
     flex-direction: column;
@@ -112,6 +102,17 @@
     .info-content p {
         padding-left: 0rem;
     }
+}
+
+@media only screen and (min-width: 750px) {
+    .info-main {
+        height: 100vh;
+    }
+    @supports (-webkit-touch-callout: none) {
+        .info-main {
+          height: -webkit-fill-available;
+        }
+      }
 }
 
 .underline {

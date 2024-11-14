@@ -64,7 +64,7 @@
 }
 
 .guests-coming {
-  height: 450px;
+  max-height: 400px;
   overflow-y: auto;
 }
 
@@ -100,7 +100,7 @@
     margin-top: 6rem;
   }
   .isComing-div {
-    max-height: 20rem;
+    max-height: 400px;
     padding: 0;
   }
   .answer-header {
