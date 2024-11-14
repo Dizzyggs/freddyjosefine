@@ -10,12 +10,13 @@
 }
 .info-main {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: "Poppins", sans-serif;
+    overflow-y: auto;
 
     h1 {
         font-size: 3rem;
@@ -24,7 +25,7 @@
 
     p {
         font-size: 1rem;
-        
+        color: white;
     }
     p:active, p:focus, p:hover {
         text-shadow: none;
@@ -40,15 +41,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    opacity: 0.2;
-  }
-
-.kyrkbild {
-    width: 500px;
-    height: auto;
-    border-radius: 8px;
-    opacity: 1 !important;
-    opacity: 300000 !important;
 }
 
 .mainwrapp {
@@ -71,14 +63,13 @@
     flex-direction: column;
     max-width: 50%;
     height: 100vh;
-    overflow-y: auto;
     align-items: center;
     font-family: "Roboto", sans-serif;
     /* font-family: "futura-pt-medium"; */
     justify-content: center;
     margin-top: 3rem;
     p {
-        color: black !important;
+        color: white;
     }
 }
 
@@ -107,15 +98,12 @@
 
 
 @media only screen and (max-width: 750px) {
-    .kyrkbild {
-        width: 385px;
-    }
     .info-img-wrap {
         padding: 0 15px;
     }
     .info-content {
         max-width: 100%;
-        margin-top: 50%;
+        margin-top: 25%;
         padding-bottom: 5rem;
         justify-content: unset;
         padding: 0 1rem;

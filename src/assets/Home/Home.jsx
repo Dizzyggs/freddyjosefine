@@ -29,11 +29,11 @@ const Home = () => {
   return (
     <MantineProvider cssVariablesResolver={cssVariablesResolver}>
       <div className="main">
-          <Helmet>
+        <Helmet>
           <link rel="preload" href="../bg.png" as="image" />
         </Helmet>
         <Header />
-        <img className='flowerpic' src={"../bg.png"} alt='bg' loading='lazy'/>
+        <img className='flowerpic' loading='lazy'/>
         <div className="welcomediv">
           <Transition
             mounted={rendered}
@@ -72,7 +72,7 @@ const Home = () => {
                         Se fliken <Link to={'/info'}><span style={{textDecoration: 'underline'}}>Information</span></Link> för mer ingående info om dagen.
                       </p>
                       <p style={{marginTop: '1rem'}}>
-                        Den största gåvan för oss är ditt deltagande under vår stora dag. Vill du ändå lämna en present tar vi tacksamt emot ett bidrag.
+                        Den finaste gåvan är att fira vår dag tillsammans med er! Men vill ni ändå uppmärksamma vår dag med en gåva uppskattar vi ett bidrag till bröllopsfesten.
                       </p>
                       </div>
                     </div>

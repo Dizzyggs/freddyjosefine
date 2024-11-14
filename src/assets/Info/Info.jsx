@@ -55,7 +55,7 @@ const Info = () => {
                   <span className='underline'>Tal/underhållning:</span> tal och annat anmäles på förhand (senast den 1 februari) till toastmaster Simon Istgren tel. 07XXXXXXX. Vi önskar om möjligt att tiden för tal begränsas till max 5 minuter.
                 </p>
                 <p>
-                  <span className='underline'>Bröllopsgåva:</span> din närvaro är mer än tillräcklig. Vill du ändå ge en bröllopspresent så önskar vi oss ett bidrag till bröllopet. Bidrag kan swishas/överföras till brudens bror, Daniel Tollin tel. 07XXXXXXX.
+                  <span className='underline'>Bröllopsgåva:</span> din närvaro är mer än tillräcklig. Vill du ändå ge en bröllopspresent så önskar vi oss ett bidrag till bröllopet. Bidrag kan swishas/överföras till brudens mamma, Susanne Tollin tel. 0708468896.
                 </p>
                 <p>
                   <span className='underline'>Transport:</span> till Manheims säteri kan man ta sig genom att på förhand ordna skjuts, beställa taxi alternativt kika på om det går en passande buss (linje 444). Din bil kan stå parkerad på Manheims över natten och hämtas dagen därpå. Parkering är kostnadsfri. Det kan också vara en bra idé att samåka. Använd gärna Facebook-gruppen för den typen av förfrågningar.

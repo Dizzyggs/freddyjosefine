@@ -52,7 +52,7 @@ const Header = (props) => {
                   <a href="tel:011340098" style={{ textDecoration: 'underline',  color: 'white' }}>
                   <span style={{ display: 'flex', flexDirection: 'row', fontSize: '.5rem', alignItems: 'center' }}>
                       <IconPhone style={{ color: 'black' }} />
-                      <p style={{margin: '0 0 0 .3rem'}}>070-XXXXXX</p>
+                      <p style={{margin: '0 0 0 .3rem'}}>073-4187605</p>
                     </span>
                   </a>
               </div>
