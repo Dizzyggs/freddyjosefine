@@ -52,7 +52,7 @@ const Info = () => {
                   <span className='underline'>Klädsel:</span> det absolut viktigaste för oss är att du känner dig snygg och bekväm! Klädkoden kommer således inte vara specificerad.
                 </p>
                 <p>
-                  <span className='underline'>Tal/underhållning:</span> tal och annat anmäles på förhand (senast den 1 februari) till toastmaster Simon Istgren tel. 07XXXXXXX. Vi önskar om möjligt att tiden för tal begränsas till max 5 minuter.
+                  <span className='underline'>Tal/underhållning:</span> tal och annat anmäles på förhand (senast den 1 februari) till toastmaster Simon Istgren tel. 073-4187605. Vi önskar om möjligt att tiden för tal begränsas till max 5 minuter.
                 </p>
                 <p>
                   <span className='underline'>Bröllopsgåva:</span> din närvaro är mer än tillräcklig. Vill du ändå ge en bröllopspresent så önskar vi oss ett bidrag till bröllopet. Bidrag kan swishas/överföras till brudens mamma, Susanne Tollin tel. 0708468896.

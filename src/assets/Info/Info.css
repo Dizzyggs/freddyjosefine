@@ -100,7 +100,6 @@
         padding: 0 1rem;
         overflow-y: auto;
         height: 100%;
-        border: 5px solid;
         padding-bottom: 6rem;
     }
     .info-content p {
