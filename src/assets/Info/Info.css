@@ -10,13 +10,13 @@
 }
 .info-main {
     width: 100vw;
-    min-height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: "Poppins", sans-serif;
-    overflow-y: auto;
+    overflow-y: hidden;
 
     h1 {
         font-size: 3rem;
@@ -38,6 +38,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: fit-content;
 }
 
 .itemwrapper {
@@ -97,7 +98,10 @@
         padding-bottom: 5rem;
         justify-content: unset;
         padding: 0 1rem;
-        overflow-x: hidden;
+        overflow-y: auto;
+        height: 100%;
+        border: 5px solid;
+        padding-bottom: 6rem;
     }
     .info-content p {
         padding-left: 0rem;
